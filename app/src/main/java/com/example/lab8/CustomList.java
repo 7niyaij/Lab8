@@ -78,5 +78,22 @@ public class CustomList extends ArrayAdapter<City> {
         return hasCity;
     }
 
-    public void deleteCity(City city) {}
+    /**
+     * This method delete the given city in our list {@link ArrayList<City> #cities}.
+     * @param city
+     *      This is a candidate city to delete which is of type {@link City}
+     * @throws IllegalArgumentException
+     */
+    public void deleteCity(City city) {
+        if (!hasCity(city)) {
+            throw new IllegalArgumentException();
+        }
+        int index = -1;
+        for (int i = 0; i < cities.size(); i++) {
+            if (city.getCityName() == cities.get(i).getCityName()) {
+                index = i;
+            }
+        }
+        cities.remove(cities.get(index));
+    }
 }
