@@ -96,4 +96,8 @@ public class CustomList extends ArrayAdapter<City> {
         }
         cities.remove(cities.get(index));
     }
+
+    public int countCities() {
+        return 0;
+    }
 }
