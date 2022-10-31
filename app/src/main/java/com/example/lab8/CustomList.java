@@ -61,6 +61,11 @@ public class CustomList extends ArrayAdapter<City> {
         cities.add(city);
     }
 
+    /**
+     * this checks if a city is inside the list
+     * @param city
+     * @return return true if city exist in list, otherwise return false
+     */
     public boolean hasCity(City city) {
         Boolean hasCity = false;
         for (int i = 0; i < cities.size(); i++) {
@@ -72,4 +77,6 @@ public class CustomList extends ArrayAdapter<City> {
         }
         return hasCity;
     }
+
+    public void deleteCity(City city) {}
 }

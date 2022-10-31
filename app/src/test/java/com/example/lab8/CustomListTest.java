@@ -47,4 +47,24 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(list.hasCity(city), true);
     }
+
+    /**
+     * add a city to list
+     * check if the city is inside the list
+     * check the size of the list
+     * delete the city from list
+     * check if the city is inside the list
+     * check if the current size matches the initial size minus one
+     */
+    @Test
+    public void deleteCityTest() {
+        list = MockCityList();
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        assertEquals(list.hasCity(city), true);
+        int listSize = list.getCount();
+        list.deleteCity(city);
+        assertEquals(list.hasCity(city), false);
+        assertEquals(list.getCount(),listSize - 1);
+    }
 }
